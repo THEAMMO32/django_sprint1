@@ -1,0 +1,16 @@
+echo {% extends 'base.html' %} > templates\blog\index.html
+echo. >> templates\blog\index.html
+echo {% block title %}Лента записей{% endblock %} >> templates\blog\index.html
+echo. >> templates\blog\index.html
+echo {% block content %} >> templates\blog\index.html
+echo     ^<h1^>Лента записей^</h1^> >> templates\blog\index.html
+echo     >> templates\blog\index.html
+echo     {% for post in posts %} >> templates\blog\index.html
+echo     ^<article^> >> templates\blog\index.html
+echo         ^<h3^>{{ post.location }}^</h3^> >> templates\blog\index.html
+echo         ^<p^>{{ post.date }}^</p^> >> templates\blog\index.html
+echo         ^<p^>{{ post.text|truncatewords:10 }}^</p^> >> templates\blog\index.html
+echo         ^<a href="{% url 'blog:post_detail' post.id %}"^>Читать полный текст^</a^> >> templates\blog\index.html
+echo     ^</article^> >> templates\blog\index.html
+echo     {% endfor %} >> templates\blog\index.html
+echo {% endblock %} >> templates\blog\index.html

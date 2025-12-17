@@ -1,0 +1,13 @@
+echo {% extends 'base.html' %} > templates\blog\detail.html
+echo. >> templates\blog\detail.html
+echo {% block title %}{{ post.location }}{% endblock %} >> templates\blog\detail.html
+echo. >> templates\blog\detail.html
+echo {% block content %} >> templates\blog\detail.html
+echo     ^<article^> >> templates\blog\detail.html
+echo         ^<h2^>{{ post.location }}^</h2^> >> templates\blog\detail.html
+echo         ^<p^>{{ post.date }}^</p^> >> templates\blog\detail.html
+echo         ^<p^>^<strong^>Категория:^</strong^> {{ post.category }}^</p^> >> templates\blog\detail.html
+echo         ^<p^>{{ post.text|linebreaks }}^</p^> >> templates\blog\detail.html
+echo     ^</article^> >> templates\blog\detail.html
+echo     ^<a href="{% url 'blog:index' %}"^>Вернуться на главную^</a^> >> templates\blog\detail.html
+echo {% endblock %} >> templates\blog\detail.html

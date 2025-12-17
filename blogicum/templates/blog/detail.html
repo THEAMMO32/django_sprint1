@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.location }}{% endblock %}
+
+{% block content %}
+    <article class="mb-5">
+        <div class="mb-4">
+            <h2>{{ post.location }}</h2>
+            <p class="text-muted">{{ post.date }}</p>
+            <p><strong>Категория:</strong> {{ post.category }}</p>
+        </div>
+        <p>{{ post.text|linebreaks }}</p>
+    </article>
+    <a href="{% url 'blog:index' %}" class="btn btn-secondary">Вернуться на главную</a>
+{% endblock %}

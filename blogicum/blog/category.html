@@ -1,0 +1,7 @@
+echo {% extends 'base.html' %} > templates\blog\category.html
+echo. >> templates\blog\category.html
+echo {% block title %}Категория {{ category_slug }}{% endblock %} >> templates\blog\category.html
+echo. >> templates\blog\category.html
+echo {% block content %} >> templates\blog\category.html
+echo     ^<h1^>Публикации в категории - {{ category_slug }}^</h1^> >> templates\blog\category.html
+echo {% endblock %} >> templates\blog\category.html
