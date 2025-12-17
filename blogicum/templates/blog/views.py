@@ -43,11 +43,15 @@ posts = [
     },
 ]
 
+
 def index(request):
+    # Ключевое изменение: возвращаем посты в обратном порядке
+    reversed_posts = list(reversed(posts))
     context = {
-        'posts': posts
+        'posts': reversed_posts
     }
     return render(request, 'blog/index.html', context)
+
 
 def post_detail(request, id):
     post = None
@@ -59,6 +63,7 @@ def post_detail(request, id):
         'post': post
     }
     return render(request, 'blog/detail.html', context)
+
 
 def category_posts(request, category_slug):
     context = {
